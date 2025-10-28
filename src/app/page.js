@@ -8,11 +8,24 @@ import { useEffect } from 'react';
 export default function LandingPage() {
   const router = useRouter();
 
+  // Helper function to get user route name
+  const getUserRouteName = (user) => {
+    if (user?.displayName) {
+      return user.displayName.toLowerCase().replace(/\s+/g, '-');
+    }
+    if (user?.email) {
+      const emailName = user.email.split('@')[0];
+      return emailName.toLowerCase();
+    }
+    return 'user';
+  };
+
   // 🔒 Redirect if user already logged in
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((user) => {
       if (user) {
-        router.push('/home');
+        const routeName = getUserRouteName(user);
+        router.push(`/${routeName}`);
       }
     });
     return unsubscribe;
@@ -24,7 +37,8 @@ export default function LandingPage() {
       const result = await signInWithPopup(auth, provider);
       const user = result.user;
       console.log('✅ Google login success:', user);
-      router.push('/home');
+      const routeName = getUserRouteName(user);
+      router.push(`/${routeName}`);
     } catch (error) {
       console.error('❌ Google login failed:', error);
     }
