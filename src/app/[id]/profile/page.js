@@ -1,4 +1,5 @@
-"use client";
+'use client'
+
 import { useState, useEffect } from "react";
 import { useParams } from "next/navigation";
 import { auth } from "../../../config/firebase";
@@ -59,7 +60,7 @@ export default function ProfilePage() {
                                     <p className="text-gray-800">{user.email}</p>
                                 </div>
                             </div>
-                            
+
                             <div className="flex items-center space-x-3">
                                 <Calendar className="text-gray-500" size={20} />
                                 <div>
@@ -77,7 +78,7 @@ export default function ProfilePage() {
                                     <p className="text-gray-800">{user.displayName || 'Not set'}</p>
                                 </div>
                             </div>
-                            
+
                             <div className="flex items-center space-x-3">
                                 <MapPin className="text-gray-500" size={20} />
                                 <div>

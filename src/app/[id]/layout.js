@@ -4,7 +4,7 @@ import { auth } from "../../config/firebase";
 import { onAuthStateChanged, signOut } from "firebase/auth";
 import { useRouter, useParams, usePathname } from "next/navigation";
 import Link from "next/link";
-import { Home, Briefcase, Users, HelpCircle, User, LogOut, Menu, FileText } from "lucide-react";
+import { Home, Briefcase, Users, Waypoints, User, LogOut, Menu, FileText } from "lucide-react";
 
 export default function DashboardLayout({ children }) {
     const [user, setUser] = useState(null);
@@ -61,7 +61,7 @@ export default function DashboardLayout({ children }) {
         { id: 'resume', label: 'Resume', icon: FileText, path: '/resume' },
         { id: 'interview', label: 'Interview', icon: Users, path: '/interview' },
         { id: 'jobs', label: 'Jobs', icon: Briefcase, path: '/jobs' },
-        { id: 'faq', label: 'FAQ', icon: HelpCircle, path: '/faq' },
+        { id: 'Roadmaps', label: 'Roadmaps', icon: Waypoints, path: '/path' },
         { id: 'profile', label: 'My Profile', icon: User, path: '/profile' },
     ];
 
