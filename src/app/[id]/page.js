@@ -26,6 +26,7 @@ export default function DashboardPage() {
                     <div className="bg-white rounded-lg border border-gray-200 p-6">
                         <h2 className="text-xl font-semibold mb-4">Dashboard Overview</h2>
                         <p className="text-gray-600">This is your home dashboard. Navigate using the sidebar to access different features.</p>
+                        
                     </div>
                 </div>
             </div>
